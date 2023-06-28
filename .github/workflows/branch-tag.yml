@@ -2,10 +2,15 @@ name: Test
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-    tags:
-      - "*"
+    branches-ignore:
+      - 'repo-sync/**'
+      - "main"
+      - "master"
+  pull_request:
+    branches-ignore:
+      - 'repo-sync/**'
+  schedule:
+    - cron: "16 0 * * 0"
 
 jobs:
     sync:
