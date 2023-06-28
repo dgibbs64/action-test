@@ -13,8 +13,10 @@ on:
     - cron: "16 0 * * 0"
 
 jobs:
-    sync:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Hello World
-          uses: gr2m/hello-world-js-action@v1
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
