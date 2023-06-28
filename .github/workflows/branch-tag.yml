@@ -1,0 +1,15 @@
+name: Sync Files
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tag:
+      - "*"
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Hello World
+          uses: gr2m/hello-world-js-action@v1
