@@ -2,6 +2,10 @@ name: Test
 on:
   workflow_dispatch:
   push:
+    tags:
+      - "*"
+    paths:
+      - "README.md"
 
 jobs:
   one:
